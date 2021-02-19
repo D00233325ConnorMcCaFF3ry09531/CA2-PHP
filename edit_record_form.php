@@ -38,6 +38,12 @@ include('includes/header.php');
                    value="<?php echo $records['price']; ?>">
             <br>
 
+
+            <label>Weight:</label>
+            <input type="input" name="weight"
+                   value="<?php echo $records['weight']; ?>">
+            <br>
+
             <label>Image:</label>
             <input type="file" name="image" accept="image/*" />
             <br>            

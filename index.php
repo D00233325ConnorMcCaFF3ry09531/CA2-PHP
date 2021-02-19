@@ -62,11 +62,13 @@ include('includes/header.php');
 <section>
 <!-- display a table of records -->
 <h2><?php echo $category_name; ?></h2>
+<h1> This is a normal H! </h1>
 <table>
 <tr>
 <th>Image</th>
 <th>Name</th>
 <th>Price</th>
+<th>Weight </th>
 <th>Delete</th>
 <th>Edit</th>
 </tr>
@@ -75,6 +77,7 @@ include('includes/header.php');
 <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
 <td><?php echo $record['name']; ?></td>
 <td class="right"><?php echo $record['price']; ?></td>
+<td><?php echo $record['weight']; ?></td>
 <td><form action="delete_record.php" method="post"
 id="delete_record_form">
 <input type="hidden" name="record_id"
