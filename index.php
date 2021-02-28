@@ -28,21 +28,21 @@ $statement2->execute();
 $categories = $statement2->fetchAll();
 $statement2->closeCursor();
 
-// Get records for selected category
-$queryRecords = "SELECT * FROM records
+// Get electronics for selected category
+$queryelectronics = "SELECT * FROM electronics
 WHERE categoryID = :category_id
-ORDER BY recordID";
-$statement3 = $db->prepare($queryRecords);
+ORDER BY electronicsID";
+$statement3 = $db->prepare($queryelectronics);
 $statement3->bindValue(':category_id', $category_id);
 $statement3->execute();
-$records = $statement3->fetchAll();
+$electronics = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
 <div class="container">
 <?php
 include('includes/header.php');
 ?>
-<h1>Record List</h1>
+<h1>electronics List</h1>
 
 <aside>
 <!-- display a list of categories -->
@@ -60,7 +60,7 @@ include('includes/header.php');
 </aside>
 
 <section>
-<!-- display a table of records -->
+<!-- display a table of electronics -->
 <h2><?php echo $category_name; ?></h2>
 <h1> This is a normal H! </h1>
 <table>
@@ -69,35 +69,37 @@ include('includes/header.php');
 <th>Name</th>
 <th>Price</th>
 <th>Weight </th>
+<th>Supplier Email Address </th>
 <th>Delete</th>
 <th>Edit</th>
 </tr>
-<?php foreach ($records as $record) : ?>
+<?php foreach ($electronics as $electronics) : ?>
 <tr>
-<td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
-<td><?php echo $record['name']; ?></td>
-<td class="right"><?php echo $record['price']; ?></td>
-<td><?php echo $record['weight']; ?></td>
-<td><form action="delete_record.php" method="post"
-id="delete_record_form">
-<input type="hidden" name="record_id"
-value="<?php echo $record['recordID']; ?>">
+<td><img src="image_uploads/<?php echo $electronics['image']; ?>" width="100px" height="100px" /></td>
+<td><?php echo $electronics['name']; ?></td>
+<td class="right"><?php echo $electronics['price']; ?></td>
+<td><?php echo $electronics['weight']; ?></td>
+<td><?php echo $electronics['email']; ?></td>
+<td><form action="delete_electronics.php" method="post"
+id="delete_electronics_form">
+<input type="hidden" name="electronics_id"
+value="<?php echo $electronics['electronicsID']; ?>">
 <input type="hidden" name="category_id"
-value="<?php echo $record['categoryID']; ?>">
+value="<?php echo $electronics['categoryID']; ?>">
 <input type="submit" value="Delete">
 </form></td>
-<td><form action="edit_record_form.php" method="post"
-id="delete_record_form">
-<input type="hidden" name="record_id"
-value="<?php echo $record['recordID']; ?>">
+<td><form action="edit_electronics_form.php" method="post"
+id="delete_electronics_form">
+<input type="hidden" name="electronics_id"
+value="<?php echo $electronics['electronicsID']; ?>">
 <input type="hidden" name="category_id"
-value="<?php echo $record['categoryID']; ?>">
+value="<?php echo $electronics['categoryID']; ?>">
 <input type="submit" value="Edit">
 </form></td>
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="add_record_form.php">Add Record</a></p>
+<p><a href="add_electronics_form.php">Add electronics</a></p>
 <p><a href="category_list.php">Manage Categories</a></p>
 </section>
 <?php
