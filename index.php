@@ -67,8 +67,8 @@ include('includes/header.php');
 <tr>
 <th>Image</th>
 <th>Name</th>
-<th>Price</th>
-<th>Weight </th>
+<th>Price (£)</th>
+<th>Weight (KG)</th>
 <th>Supplier Email Address </th>
 <th>Delete</th>
 <th>Edit</th>
@@ -101,6 +101,8 @@ value="<?php echo $electronics['categoryID']; ?>">
 </table>
 <p><a href="add_electronics_form.php">Add electronics</a></p>
 <p><a href="category_list.php">Manage Categories</a></p>
+
+
 </section>
 <?php
 include('includes/footer.php');
