@@ -38,7 +38,7 @@ include('includes/header.php');
             
             
             <label>Weight in (KG):</label>
-            <input type="input" id=weight name="weight"   onBlur="weight_validation();"    required> <span id="weight_err"></span>
+            <input type="input" id="weight" name="weight"   onBlur="weight_validation();"    required> <span id="weight_err"></span>
             <br>
 
             <label>Supplier Email Address :</label>

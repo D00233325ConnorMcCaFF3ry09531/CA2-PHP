@@ -13,6 +13,7 @@ $statement->closeCursor();
 ?>
 <!-- the head section -->
  <div class="container">
+ <script src="validation.js"></script>
 <?php
 include('includes/header.php');
 ?>
@@ -29,24 +30,24 @@ include('includes/header.php');
             <br>
 
             <label>Name:</label>
-            <input type="input" name="name"  required
-                   value="<?php echo $electronics['name']; ?>">
+            <input type="input" name="name" id="name" onBlur="name_validation();" required
+                   value="<?php echo $electronics['name']; ?>"><span id="name_err"></span>
             <br>
 
             <label>List Price:</label>
-            <input type="input" name="price"  required
-                   value="<?php echo $electronics['price']; ?>">
+            <input type="input" name="price" id="price" onBlur="price_validation();"  required
+                   value="<?php echo $electronics['price']; ?>"><span id="price_err"></span>
             <br>
 
 
             <label>Weight:</label>
-            <input type="input" name="weight"
-                   value="<?php echo $electronics['weight']; ?>">
+            <input type="input" name="weight" id="weight"   onBlur="weight_validation();" 
+                   value="<?php echo $electronics['weight']; ?>"><span id="weight_err"></span>
             <br>
 
             <label>Email:</label>
-            <input type="input"    name="email"
-            pattern="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" required  value="<?php echo $electronics['email'];  ?>">
+            <input type="input"    name="email" id=email onBlur="email_validation();"
+            pattern="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" required  value="<?php echo $electronics['email'];  ?>"><span id="email_err"></span>
             <br>
 
             <label>Image:</label>
