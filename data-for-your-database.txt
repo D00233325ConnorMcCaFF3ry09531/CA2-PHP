@@ -66,3 +66,63 @@ ALTER TABLE `electronics`
 --
 ALTER TABLE `electronics`
   MODIFY `electronicsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `regions` (
+  `regionID` int(11) NOT NULL,
+  `regionName` varchar(255) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `regions` (`regionID`, `regionName`) VALUES
+(1, 'England'),
+(2, 'Scotland'),
+(3, 'Wales');
+
+--
+-- Table structure for table `electronics`
+--
+
+CREATE TABLE `store` (
+  `storeID` int(11) NOT NULL,
+  `regionID` int(11) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `postcode`varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `electronics`
+--
+
+
+--
+-- Indexes for dumped tables
+--
+
+--
+--
+--
+ALTER TABLE `regions`
+  ADD PRIMARY KEY (`regionID`);
+ADD PRIMARY KEY(`storeID`)
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `regions`
+--
+ALTER TABLE `regions`
+  MODIFY `regionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+ALTER TABLE `store`
+  MODIFY `storeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
