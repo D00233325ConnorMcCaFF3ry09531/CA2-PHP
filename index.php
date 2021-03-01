@@ -101,7 +101,7 @@ value="<?php echo $electronics['categoryID']; ?>">
 </table>
 <p><a href="add_electronics_form.php">Add electronics</a></p>
 <p><a href="category_list.php">Manage Categories</a></p>
-
+<p><a href="regions_menu.php">View Regions </a></p>
 
 </section>
 <?php
