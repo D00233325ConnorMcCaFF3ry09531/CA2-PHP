@@ -10,6 +10,7 @@ $statement->closeCursor();
 ?>
 <!-- the head section -->
  <div class="container">
+ <script src="validation.js"></script>
 <?php
 include('includes/header.php');
 ?>
@@ -28,20 +29,20 @@ include('includes/header.php');
             </select>
             <br>
             <label>Name:</label>
-            <input type="input" name="name" required  placeholder="Add Name">
+            <input type="input" name="name" id="name"   placeholder="Add Name"  onBlur="name_validation();"  required ><span id="name_err"></span>
             <br>
 
             <label>List Price:</label>
-            <input type="input" name="price" required>
+            <input type="input" name="price" id=price  onBlur="price_validation();" required> <span id="price_err"></span>
             <br>      
             
             
             <label>Weight in (KG):</label>
-            <input type="input" name="weight" required>
+            <input type="input" id=weight name="weight"   onBlur="weight_validation();"    required> <span id="weight_err"></span>
             <br>
 
             <label>Supplier Email Address :</label>
-            <input type="input" name= "email" required>
+            <input type="input"  name= "email" id="email"  onBlur="email_validation();" pattern="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" required ><span id="email_err"></span>
             <br>
             
             <label>Image:</label>

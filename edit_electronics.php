@@ -7,7 +7,7 @@ $name = filter_input(INPUT_POST, 'name');
 
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 $weight = filter_input(INPUT_POST, 'weight');
-$email = filter_input(INPUT_POST, 'weight');
+$email = filter_input(INPUT_POST, 'email');
 // Validate inputs
 if ($electronics_id == NULL ||$email == NULL || $electronics_id == FALSE || $category_id == NULL ||
 $category_id == FALSE || empty($name) ||

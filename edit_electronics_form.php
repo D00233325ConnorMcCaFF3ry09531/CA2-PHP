@@ -24,17 +24,17 @@ include('includes/header.php');
                    value="<?php echo $electronics['electronicsID']; ?>">
 
             <label>Category ID:</label>
-            <input type="category_id" name="category_id"
+            <input type="category_id" name="category_id"  required
             value="<?php echo $electronics['categoryID']; ?>">
             <br>
 
             <label>Name:</label>
-            <input type="input" name="name"
+            <input type="input" name="name"  required
                    value="<?php echo $electronics['name']; ?>">
             <br>
 
             <label>List Price:</label>
-            <input type="input" name="price"
+            <input type="input" name="price"  required
                    value="<?php echo $electronics['price']; ?>">
             <br>
 
@@ -45,8 +45,8 @@ include('includes/header.php');
             <br>
 
             <label>Email:</label>
-            <input type="input" name="email"
-                   value="<?php echo $electronics['email']; ?>">
+            <input type="input"    name="email"
+            pattern="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" required  value="<?php echo $electronics['email'];  ?>">
             <br>
 
             <label>Image:</label>
