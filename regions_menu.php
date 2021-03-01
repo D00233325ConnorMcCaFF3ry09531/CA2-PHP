@@ -99,7 +99,7 @@ value="<?php echo $store['regionID']; ?>">
 <?php endforeach; ?>
 </table>
 <p><a href="add_store_form.php">Add store</a></p>
-<p><a href="region_list.php">Manage regions</a></p>
+<p><a href="index.php">View Products</a></p>
 
 
 </section>
