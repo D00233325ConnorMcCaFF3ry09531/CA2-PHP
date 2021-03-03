@@ -52,7 +52,7 @@ include('includes/header.php');
             <input type="submit" value="Save Changes">
             <br>
         </form>
-        <p><a href="regions_menu.php">View Stores</a></p>
+        <p><a href="index.php">View Homepage</a></p>
     <?php
 include('includes/footer.php');
 ?>

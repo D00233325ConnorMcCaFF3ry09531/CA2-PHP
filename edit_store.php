@@ -69,6 +69,6 @@ $statement->execute();
 $statement->closeCursor();
 
 // Display the Product List page
-include('regions_menu.php');
+include('index.php');
 }
 ?>

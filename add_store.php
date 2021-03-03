@@ -74,5 +74,5 @@ if ($region_id == null) {
     $statement->closeCursor();
 
     // Display the Product List page
-    include('regions_menu.php');
+    include('index.php');
 }

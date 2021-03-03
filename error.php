@@ -3,7 +3,7 @@
 
 <!-- the head section -->
 <head>
-    <title>My Guitar Shop</title>
+    <title>My Electronics Shop</title>
     <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <?php
@@ -11,7 +11,7 @@ include('includes/header.php');
 ?>
 <!-- the body section -->
 <body>
-    <header><h1>My Guitar Shop</h1></header>
+    <header><h1>My Electronics Shop</h1></header>
 
     <main>
         <h2 class="top">Error</h2>
@@ -21,7 +21,7 @@ include('includes/header.php');
 include('includes/footer.php');
 ?>
     <footer>
-        <p>&copy; <?php echo date("Y"); ?> My Guitar Shop, Inc.</p>
+        <p>&copy; <?php echo date("Y"); ?> MyElectronics Shop, Inc.</p>
     </footer>
 </body>
 </html>

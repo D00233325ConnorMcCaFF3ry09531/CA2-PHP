@@ -1,3 +1,6 @@
+
+
+
 <?php
 require_once('database.php');
 
@@ -7,6 +10,7 @@ $region_id = filter_input(INPUT_GET, 'region_id',
 FILTER_VALIDATE_INT);
 if ($region_id == NULL || $region_id == FALSE) {
 $region_id = 1;
+echo  $region_id;
 }
 }
 
@@ -39,18 +43,20 @@ $store = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
 <div class="container">
+
 <?php
 include('includes/header.php');
 ?>
 <h1>store List</h1>
 
+
 <aside>
-<!-- display a list of regions -->
-<h2>regions</h2>
+<!-- display a list of categories -->
+<h2>Categories</h2>
 <nav>
 <ul>
 <?php foreach ($regions as $region) : ?>
-<li><a href=".?region_id=<?php echo $region['regionID']; ?>">
+<li><a href="?region_id=<?php echo $region['regionID']; ?>">
 <?php echo $region['regionName']; ?>
 </a>
 </li>
@@ -58,7 +64,6 @@ include('includes/header.php');
 </ul>
 </nav>          
 </aside>
-
 <section>
 <!-- display a table of store -->
 <h2><?php echo $region_name; ?></h2>
@@ -99,7 +104,10 @@ value="<?php echo $store['regionID']; ?>">
 <?php endforeach; ?>
 </table>
 <p><a href="add_store_form.php">Add store</a></p>
-<p><a href="index.php">View Products</a></p>
+
+
+
+
 
 
 </section>
