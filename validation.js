@@ -76,7 +76,53 @@ function name_validation(){
     document.getElementById('email_err').style.color = "#00AF33";
     }
     }
-    //email validation ends
+
+
+
+
+    function address_validation (){
+
+
+        var address_name = document.getElementById("address");
+        var address_value = document.getElementById("address").value;
+        var address_length = address_value.length;
+    
+        if(address_length <= 4|| address_length > 200)
+        {
+        document.getElementById('address_err').innerHTML = 'address must be more than 4 and less than 200.';
+        address_name.focus();
+        document.getElementById('address_err').style.color = "#FF0000";
+        }
+        else
+        {
+        document.getElementById('address_err').innerHTML = 'Valid address';
+        document.getElementById('address_err').style.color = "#00AF33";
+        }
+        }
+
+
+        function postcode_validation(){
+            'use strict';
+            var postcode_name = document.getElementById("postcode");
+            var postcode_value = document.getElementById("postcode").value;
+            var postcode_length =postcode_value.length;
+            var postcode_format = /[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}/
+            
+            if(!postcode_value.match(postcode_format)  || postcode_length === 0)
+            {
+            document.getElementById('postcode_err').innerHTML = 'You must select a postcode';
+            postcode_name.focus();
+            document.getElementById('postcode_err').style.color = "#FF0000";
+            }
+            else
+            {
+            document.getElementById('postcode_err').innerHTML = 'postcode selected.';
+            document.getElementById('postcode_err').style.color = "#00AF33";
+            }
+            }
+        
+    
+    //postcode validation ends
     //zip validation starts
    
     //gender validation ends

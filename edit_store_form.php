@@ -13,7 +13,7 @@ $statement->closeCursor();
 ?>
 <!-- the head section -->
  <div class="container">
-
+ <script src="validation.js"></script>
 <?php
 include('includes/header.php');
 ?>
@@ -30,20 +30,23 @@ include('includes/header.php');
             <br>
 
             <label>Address</label>
-            <input type="input" name="address" id="address"  required
+            <input type="input" name="address" id="address" onBlur="address_validation();" required
                    value="<?php echo $store['address']; ?>"><span id="address_err"></span>
             <br>
 
             <label>Postcode: </label>
-            <input type="input" name="postcode" id="postcode"  required
-                   value="<?php echo $store['postcode']; ?>"><span id="postcode_err"></span>
+            <input type="input" name="postcode" id="postcode" onBlur="postcode_validation();"
+              pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}" required
+   value="<?php echo $store['postcode']; ?>"><span id="postcode_err"></span>
             <br>
 
 
 
             <label>Image:</label>
             <input type="file" name="image" accept="image/*" />
-            <br>            
+            <br>   
+            
+                     
             <?php if ($store['image'] != "") { ?>
             <p><img src="image_uploads/<?php echo $store['image']; ?>" height="150" /></p>
             <?php } ?>

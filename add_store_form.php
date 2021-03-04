@@ -10,7 +10,7 @@ $statement->closeCursor();
 ?>
 <!-- the head section -->
  <div class="container">
- 
+ <script src="validation.js"></script>
 <?php
 include('includes/header.php');
 ?>
@@ -29,11 +29,12 @@ include('includes/header.php');
             </select>
             <br>
             <label>Address:</label>
-            <input type="input" name="address" id="address"   placeholder="Add Address"    required >
+            <input type="input" name="address" id="address"   placeholder="Add Address"  onBlur="address_validation();"  required ><span id="address_err"></span>
             <br>
 
             <label>Postcode:</label>
-            <input type="input" name="postcode" id="postcode"  required> 
+            <input type="input" name="postcode" id="postcode" onBlur="postcode_validation();"
+              pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}"  required> <span id="postcode_err"></span>
             <br>      
             
             
