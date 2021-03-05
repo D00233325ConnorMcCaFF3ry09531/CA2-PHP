@@ -73,7 +73,7 @@ include('includes/header.php');
 <nav>
 <ul>
 <?php foreach ($categories as $category) : ?>
-<li><a href=".?category_id=<?php echo $category['categoryID']; ?>">
+<li><a class="btn" href=".?category_id=<?php echo $category['categoryID']; ?>">
 <?php echo $category['categoryName']; ?>
 </a>
 </li>
@@ -122,9 +122,9 @@ value="<?php echo $electronics['categoryID']; ?>">
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="add_electronics_form.php">Add electronics</a></p>
-<p><a href="category_list.php">Manage Categories</a></p>
-<p><a href="regions_menu.php">View</a></p>
+<p><a class= "btn" href="add_electronics_form.php">Add electronics</a></p>
+<p><a class ="btn" href="category_list.php">Manage Categories</a></p>
+<p><a class= "btn" href="regions_menu.php">View Stores</a></p>
 
 
 

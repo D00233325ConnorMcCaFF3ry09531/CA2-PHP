@@ -51,7 +51,7 @@ include('includes/header.php');
             <input type="submit" value="Add store">
             <br>
         </form>
-        <p><a href="index.php">View Homepage</a></p>
+        <p><a class= "btn" href="index.php">View Homepage</a></p>
     <?php
 include('includes/footer.php');
 ?>

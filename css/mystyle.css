@@ -72,7 +72,7 @@ body {
   width: 1000px;
   margin: 0 auto;
   background-color: white;
-  border: 1px solid black;
+  border: 3px solid #e6f029;
   padding: .5em 2em;
 }
 
@@ -109,15 +109,27 @@ a:hover {
 }
 
 table {
-  border: 1px solid black;
+  border: 1px solid #1167e7;
   border-collapse: collapse;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 td, th {
-  border: 1px dashed black;
+  border: 1px dashed #1167e7;
   padding: .2em .5em .2em .5em;
   vertical-align: top;
   text-align: left;
+}
+
+th {
+  background-color: #e6f029;
+  -webkit-text-fill-color: #1167e7;
+  /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 0.4px;
+  -webkit-text-stroke-color: #111010;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 form {
@@ -158,6 +170,29 @@ br {
 
 #add_electronics_form input[text] {
   width: 15em;
+}
+
+a.btn {
+  padding: 10px 10px;
+  display: inline-block;
+  border-radius: 12px;
+  background: #1167e7;
+  font-size: 16px;
+  color: #e6f029;
+}
+
+.btn:hover {
+  color: #1167e7;
+  background-color: #e6f029;
+}
+
+.btn-large {
+  padding: 20px 30px;
+  display: inline-block;
+  border-radius: 12px;
+  background: #1167e7;
+  font-size: 22px;
+  color: #e6f029;
 }
 
 /* Here is where the sidebar styles start  */
