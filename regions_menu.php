@@ -73,7 +73,7 @@ include('includes/header.php');
 <th>Image</th>
 <th>Address</th>
 <th>Postcode</th>
-
+<th>Date and Time Created </th>
 <th>Delete</th>
 <th>Edit</th>
 </tr>
@@ -83,7 +83,7 @@ include('includes/header.php');
 <td><?php echo $store['address']; ?></td>
 
 <td><?php echo $store['postcode']; ?></td>
-
+<td><?php echo $store['created']; ?></td>
 <td><form action="delete_store.php" method="post"
 id="delete_store_form">
 <input type="hidden" name="store_id"

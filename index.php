@@ -72,6 +72,7 @@ include('includes/header.php');
 <th>Price (£)</th>
 <th>Weight (KG)</th>
 <th>Supplier Email Address </th>
+<th>Date and Time Created </th>
 <th>Delete</th>
 <th>Edit</th>
 </tr>
@@ -82,6 +83,7 @@ include('includes/header.php');
 <td class="right"><?php echo $electronics['price']; ?></td>
 <td><?php echo $electronics['weight']; ?></td>
 <td><?php echo $electronics['email']; ?></td>
+<td><?php echo $electronics['created']; ?></td>
 <td><form action="delete_electronics.php" method="post"
 id="delete_electronics_form">
 <input type="hidden" name="electronics_id"
