@@ -45,6 +45,8 @@ include('includes/header.php');
             <input type="input"  name= "email" id="email" placeholder="Add Email Address" onBlur="email_validation();" pattern="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" required ><span id="email_err"></span>
             <br>
             
+          
+            <br>   
             <label>Image:</label>
             <input type="file" name="image" accept="image/*" />
             <br>

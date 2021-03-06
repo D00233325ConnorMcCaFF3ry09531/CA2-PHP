@@ -37,7 +37,10 @@ include('includes/header.php');
               pattern="[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}"  required> <span id="postcode_err"></span>
             <br>      
             
-            
+            <label>Most Recent Inspection Date: </label>
+            <input type="date" name="inspection" id="inspection">
+
+            <br>
             
             <label>Image:</label>
             <input type="file" name="image" accept="image/*" />

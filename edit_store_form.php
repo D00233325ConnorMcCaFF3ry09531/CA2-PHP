@@ -40,6 +40,10 @@ include('includes/header.php');
    value="<?php echo $store['postcode']; ?>"><span id="postcode_err"></span>
             <br>
 
+            <label>Most Recent Inspection Date: </label>
+            <input type="date" name="inspection" id="inspection"
+   value="<?php echo $store['inspection']; ?>">
+            <br>
 
 
             <label>Image:</label>

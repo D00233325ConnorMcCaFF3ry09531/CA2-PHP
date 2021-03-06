@@ -4,7 +4,7 @@
 $region_id = filter_input(INPUT_POST, 'region_id', FILTER_VALIDATE_INT);
 $address = filter_input(INPUT_POST, 'address');
 $postcode = filter_input(INPUT_POST, 'postcode');
-
+$inspection = filter_input(INPUT_POST, 'inspection');
 // Validate inputs
 if ($region_id == null) {
     $error = "Invalid store data. Check all fields and try again.";
@@ -62,13 +62,15 @@ if ($region_id == null) {
 
     // Add the product to the database 
     $query = "INSERT INTO store
-                 (regionID, address, postcode, image)
+                 (regionID, address, postcode,inspection, image)
               VALUES
-                 (:region_id, :address, :postcode, :image)";
+                 (:region_id, :address, :postcode,:inspection, :image)";
     $statement = $db->prepare($query);
     $statement->bindValue(':region_id', $region_id);
     $statement->bindValue(':address', $address);
     $statement->bindValue(':postcode', $postcode);
+    
+    $statement->bindValue(':inspection', $inspection);
     $statement->bindValue(':image', $image);
     $statement->execute();
     $statement->closeCursor();

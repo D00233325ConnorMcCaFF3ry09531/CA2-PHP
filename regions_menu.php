@@ -10,7 +10,7 @@ $region_id = filter_input(INPUT_GET, 'region_id',
 FILTER_VALIDATE_INT);
 if ($region_id == NULL || $region_id == FALSE) {
 $region_id = 1;
-echo  $region_id;
+
 }
 }
 
@@ -73,7 +73,9 @@ include('includes/header.php');
 <th>Image</th>
 <th>Address</th>
 <th>Postcode</th>
-<th>Date and Time Created </th>
+<th>Last Inspection Date </th>
+<th>Date and Time Added  </th>
+
 <th>Delete</th>
 <th>Edit</th>
 </tr>
@@ -83,7 +85,10 @@ include('includes/header.php');
 <td><?php echo $store['address']; ?></td>
 
 <td><?php echo $store['postcode']; ?></td>
+<td><?php echo $store['inspection']; ?></td>
 <td><?php echo $store['created']; ?></td>
+
+
 <td><form action="delete_store.php" method="post"
 id="delete_store_form">
 <input type="hidden" name="store_id"

@@ -4,8 +4,11 @@
 $region_id = filter_input(INPUT_POST, 'region_id', FILTER_VALIDATE_INT);
 $store_id = filter_input(INPUT_POST, 'store_id', FILTER_VALIDATE_INT);
 $address = filter_input(INPUT_POST, 'address');
-
 $postcode = filter_input(INPUT_POST, 'postcode');
+$inspection = filter_input(INPUT_POST, 'inspection');
+
+
+
 // Validate inputs
 if ($region_id == NULL ||$postcode == NULL || $region_id == FALSE || $store_id == NULL ||
 $store_id == FALSE ||
@@ -54,7 +57,9 @@ SET regionID = :region_id,
 
 address = :address,
 postcode = :postcode,
+inspection = :inspection,
 image = :image
+
 WHERE storeID = :store_id';
 $statement = $db->prepare($query);
 
@@ -62,6 +67,7 @@ $statement->bindValue(':region_id', $region_id);
 
 $statement->bindValue(':address', $address);
 $statement->bindValue(':postcode', $postcode);
+$statement->bindValue(':inspection', $inspection);
 $statement->bindValue(':image', $image);
 $statement->bindValue(':store_id', $store_id);
 

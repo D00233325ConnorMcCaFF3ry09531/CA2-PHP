@@ -72,7 +72,7 @@ include('includes/header.php');
 <th>Price (£)</th>
 <th>Weight (KG)</th>
 <th>Supplier Email Address </th>
-<th>Date and Time Created </th>
+<th>Date and Time Added </th>
 <th>Delete</th>
 <th>Edit</th>
 </tr>
