@@ -47,7 +47,7 @@ $statement3->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-<h1>store List</h1>
+<h1>Store List</h1>
 
 
 <aside>
@@ -56,7 +56,7 @@ include('includes/header.php');
 <nav>
 <ul>
 <?php foreach ($regions as $region) : ?>
-<li><a href="?region_id=<?php echo $region['regionID']; ?>">
+<li><a class="btn" href="?region_id=<?php echo $region['regionID']; ?>">
 <?php echo $region['regionName']; ?>
 </a>
 </li>
@@ -67,7 +67,7 @@ include('includes/header.php');
 <section>
 <!-- display a table of store -->
 <h2><?php echo $region_name; ?></h2>
-<h1> This is a normal H! </h1>
+
 <table>
 <tr>
 <th>Image</th>
@@ -103,9 +103,9 @@ value="<?php echo $store['regionID']; ?>">
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a class= "btn" href="add_store_form.php">Add store</a></p>
+<p><a class= "btn" href="add_store_form.php">Add Store</a></p>
 <p><a class= "btn" href="region_list.php">Manage Regions</a></p>
-
+<p><a class= "btn" href="index.php">Return to Products</a></p>
 
 
 

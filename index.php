@@ -1,25 +1,3 @@
-<div class="background">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
 
 <?php
 require_once('database.php');
@@ -65,7 +43,7 @@ $statement3->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-<h1>electronics List</h1>
+<h1>Electronics List</h1>
 
 <aside>
 <!-- display a list of categories -->
@@ -73,6 +51,7 @@ include('includes/header.php');
 <nav>
 <ul>
 <?php foreach ($categories as $category) : ?>
+
 <li><a class="btn" href=".?category_id=<?php echo $category['categoryID']; ?>">
 <?php echo $category['categoryName']; ?>
 </a>
@@ -85,7 +64,7 @@ include('includes/header.php');
 <section>
 <!-- display a table of electronics -->
 <h2><?php echo $category_name; ?></h2>
-<h1> This is a normal H! </h1>
+
 <table>
 <tr>
 <th>Image</th>
@@ -122,7 +101,7 @@ value="<?php echo $electronics['categoryID']; ?>">
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a class= "btn" href="add_electronics_form.php">Add electronics</a></p>
+<p><a class= "btn" href="add_electronics_form.php">Add Electronics</a></p>
 <p><a class ="btn" href="category_list.php">Manage Categories</a></p>
 <p><a class= "btn" href="regions_menu.php">View Stores</a></p>
 

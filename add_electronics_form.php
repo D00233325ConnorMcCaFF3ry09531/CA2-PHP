@@ -33,16 +33,16 @@ include('includes/header.php');
             <br>
 
             <label>List Price:</label>
-            <input type="input" name="price" id=price  onBlur="price_validation();" required> <span id="price_err"></span>
+            <input type="input" name="price" id=price placeholder="Add Price" onBlur="price_validation();" required> <span id="price_err"></span>
             <br>      
             
             
             <label>Weight in (KG):</label>
-            <input type="input" id="weight" name="weight"   onBlur="weight_validation();"    required> <span id="weight_err"></span>
+            <input type="input" id="weight" name="weight" placeholder="Add Weight"  onBlur="weight_validation();"    required> <span id="weight_err"></span>
             <br>
 
             <label>Supplier Email Address :</label>
-            <input type="input"  name= "email" id="email"  onBlur="email_validation();" pattern="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" required ><span id="email_err"></span>
+            <input type="input"  name= "email" id="email" placeholder="Add Email Address" onBlur="email_validation();" pattern="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" required ><span id="email_err"></span>
             <br>
             
             <label>Image:</label>

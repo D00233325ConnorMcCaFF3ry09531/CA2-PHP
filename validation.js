@@ -12,7 +12,7 @@ function name_validation(){
     }
     else
     {
-    document.getElementById('name_err').innerHTML = 'Valid user name';
+    document.getElementById('name_err').innerHTML = 'Valid product name';
     document.getElementById('name_err').style.color = "#00AF33";
     }
     }
@@ -23,15 +23,16 @@ function name_validation(){
     var price_name = document.getElementById("price");
     var price_value = document.getElementById("price").value;
     var price_length = price_value.length;
-    if(price_value <= 1.50  || price_value > 2500)
+    var letters = /[a-zA-Z]+/;
+    if(price_value < 1.50  || price_value > 2500 || price_value.match(letters))
     {
-    document.getElementById('price_err').innerHTML = 'Password must be at least 6 chracters long';
+    document.getElementById('price_err').innerHTML = 'Price must be between 1.50 and 2500';
     price_name.focus();
     document.getElementById('price_err').style.color = "#FF0000";
     }
     else
     {
-    document.getElementById('price_err').innerHTML = 'Valid password';
+    document.getElementById('price_err').innerHTML = 'Valid price';
     document.getElementById('price_err').style.color = "#00AF33";
     }
     }
@@ -42,8 +43,8 @@ function name_validation(){
     var weight_name = document.getElementById("weight");
     var weight_value = document.getElementById("weight").value;
     var weight_length = weight_value.length;
-
-    if(weight_value <= 0|| weight_value > 700)
+    var letters = /[a-zA-Z]+/;
+    if(weight_value <= 0|| weight_value > 700|| weight_value.match(letters))
     {
     document.getElementById('weight_err').innerHTML = 'weight must bemore than 0 and less than 700.';
     weight_name.focus();
