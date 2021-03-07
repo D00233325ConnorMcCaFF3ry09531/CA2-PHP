@@ -1,9 +1,9 @@
 # Electronics Shop PHP Application
 
 ## What my project is about
-This project is a working CRUD application that allows a user to edit, add and delete record for Newry Electronics. The website focuses on both the products and the store managment for Newry Electronics. It contains everything from last inspection date to product price. 
+This project is a working CRUD application that allows a user to edit, add and delete record for Newry Electronics. The website focuses on both the products and the store managment for Newry Electronics. It contains everything from last inspection date to product price. The business, brand, images and logo are unique and where created by me. 
 <img src="images/el3.PNG" id="logo">
-## Instruction on setup
+## Instructions on setup
 * Create a MySQL database called php-crud in PHP MyAdmin
 * Run the code in the data-for-yout-database.txt file in PHP MyAdmin
 * Move the PHP files in to your htdocs folder so Apache can process the PHP code
