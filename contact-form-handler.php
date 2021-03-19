@@ -1,6 +1,6 @@
 <?php 
 $errors = '';
-$myemail = 'D00233325@dkit.ie';//<-----Put your DkIT email address here.
+$myemail = 'D00233325@student.dkit.ie';//<-----Put your DkIT email address here.
 if(empty($_POST['name'])  || 
    empty($_POST['email']) || 
    empty($_POST['phone']) ||
@@ -32,21 +32,17 @@ if( empty($errors))
 	
 	mail($to,$email_subject,$email_body,$headers);
 	//redirect to the 'thank you' page
-	header('Location: contact-form-thank-you.html');
+	header('Location: contact-form-thank-you.php');
 } 
 ?>
-<!DOCTYPE HTML> 
-<html>
-<head>
-	<title>Contact form handler</title>
-</head>
-
-<body>
-<!-- This page is displayed only if there is some error -->
+<div class="container">
+<?php
+include('includes/header.php');
+?>
 <?php
 echo nl2br($errors);
 ?>
+<?php
+include('includes/footer.php');
+?>
 
-
-</body>
-</html>
