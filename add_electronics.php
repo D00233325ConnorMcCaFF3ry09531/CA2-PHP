@@ -13,6 +13,7 @@ if ($category_id == null|| $weight == null ||$email == null || $category_id == f
     include('error.php');
     exit();
 } else {
+    
 
     /**************************** Image upload ****************************/
 
