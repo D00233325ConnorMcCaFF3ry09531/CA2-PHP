@@ -72,12 +72,13 @@ if(isset($_POST['register'])){
     if($result){
         //What you do here is up to you!
         echo 'Thank you for registering with our website.';
+        header('Location: register_success.php');
     }
     
 }
 
 ?>
-<!DOCTYPE html>
+ <script src="validation.js"></script>
 <div class="container">
 <?php
 include('includes/header.php');
@@ -90,10 +91,11 @@ include('includes/header.php');
             <label for="username">Username</label>
             <input type="text" id="username" name="username"><br>
             <label for="password">Password</label>
-            <input type="text" id="password" name="password"><br>
+            <input type="password" id="password" name="password"><br>
             <input type="submit" name="register" value="Register"></button>
         </form>
-   
+
+      
 <?php
 include('includes/footer.php');
 ?>

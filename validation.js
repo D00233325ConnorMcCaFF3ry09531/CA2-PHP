@@ -122,8 +122,29 @@ function name_validation(){
             }
             }
         
+
+            function validate_password(){
+                'use strict';
+                var password_name = document.getElementById("password");
+                var password_value = document.getElementById("password").value;
+                var password_length =password_value.length;
+                var password_format = /[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}/
+                
+                if(!password_value.match(password_format)  || password_length === 0)
+                {
+                document.getElementById('password_err').innerHTML = 'You must select a password';
+                password_name.focus();
+                document.getElementById('password_err').style.color = "#FF0000";
+                }
+                else
+                {
+                document.getElementById('password_err').innerHTML = 'password selected.';
+                document.getElementById('password_err').style.color = "#00AF33";
+                }
+                }
+            
     
-    //postcode validation ends
+    //password validation ends
     //zip validation starts
    
     //gender validation ends
