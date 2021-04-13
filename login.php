@@ -8,6 +8,9 @@
 session_start();
 
 
+
+
+
 /**
  * Include ircmaxell's password_compat library.
  */
@@ -74,6 +77,7 @@ if(isset($_POST['login'])){
 ?>
 <!DOCTYPE html>
 <div class="container">
+<script src="validation.js"></script>
 <?php
 include('includes/header.php');
 ?>
@@ -84,7 +88,7 @@ include('includes/header.php');
             <label for="username">Username</label>
             <input type="text" id="username" name="username"><br>
             <label for="password">Password</label>
-            <input type="text" id="password" name="password"><br>
+            <input type="text" id="password" name="password" onBlur="validate_password();"><span id="password_err"></span><br>
             <input type="submit" name="login" value="Login">
         </form>
         <?php
