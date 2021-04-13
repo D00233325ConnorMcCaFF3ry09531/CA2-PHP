@@ -1,5 +1,7 @@
 
-<?php
+<?php  
+
+
 require_once('database.php');
 
 // Get category ID
@@ -73,8 +75,7 @@ include('includes/header.php');
 <th>Weight (KG)</th>
 <th>Supplier Email Address </th>
 <th>Date and Time Added </th>
-<th>Delete</th>
-<th>Edit</th>
+
 </tr>
 <?php foreach ($electronics as $electronics) : ?>
 <tr>
@@ -84,28 +85,17 @@ include('includes/header.php');
 <td><?php echo $electronics['weight']; ?></td>
 <td><?php echo $electronics['email']; ?></td>
 <td><?php echo $electronics['created']; ?></td>
-<td><form action="delete_electronics.php" method="post"
-id="delete_electronics_form">
+
 <input type="hidden" name="electronics_id"
 value="<?php echo $electronics['electronicsID']; ?>">
 <input type="hidden" name="category_id"
 value="<?php echo $electronics['categoryID']; ?>">
-<input type="submit" value="Delete">
-</form></td>
-<td><form action="edit_electronics_form.php" method="post"
-id="delete_electronics_form">
-<input type="hidden" name="electronics_id"
-value="<?php echo $electronics['electronicsID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $electronics['categoryID']; ?>">
-<input type="submit" value="Edit">
-</form></td>
+
+</form>
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a class= "btn" href="add_electronics_form.php">Add Electronics</a></p>
-<p><a class ="btn" href="category_list.php">Manage Categories</a></p>
-<p><a class= "btn" href="regions_menu.php">View Stores</a></p>
+
 
 
 

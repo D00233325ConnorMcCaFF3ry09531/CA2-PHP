@@ -128,11 +128,11 @@ function name_validation(){
                 var password_name = document.getElementById("password");
                 var password_value = document.getElementById("password").value;
                 var password_length =password_value.length;
-                var password_format = /[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}/
+                var password_format =/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
                 
                 if(!password_value.match(password_format)  || password_length === 0)
                 {
-                document.getElementById('password_err').innerHTML = 'You must select a password';
+                document.getElementById('password_err').innerHTML = 'Password must be  eight characters and have at least one letter and one number:';
                 password_name.focus();
                 document.getElementById('password_err').style.color = "#FF0000";
                 }
