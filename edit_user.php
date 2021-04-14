@@ -2,16 +2,16 @@
 
 // Get the electronics data
 $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
-$username = filter_input(INPUT_POST, 'username');
+$username1 = filter_input(INPUT_POST, 'username');
 $password = filter_input(INPUT_POST, 'password');
-
+$passwordHash = password_hash($password, PASSWORD_BCRYPT, array("cost" => 12));
 $admin = filter_input(INPUT_POST, 'admin');
-echo "<script type='text/javascript'>alert('$username');</script>";
+echo "<script type='text/javascript'>alert('$username1');</script>";
 echo "<script type='text/javascript'>alert('$admin');</script>";
 echo "<script type='text/javascript'>alert('$id');</script>";
-
+echo "<script type='text/javascript'>alert('$password');</script>";
 // Validate inputs
-if ($id == NULL ||$username == NULL || $password= null 
+if ($id == NULL ||$username1 == NULL || $password= null 
 ) {
 $error = "Invalid  data. Check all fields and try again.";
 include('error.php');
@@ -29,16 +29,15 @@ admin = :admin
 
 WHERE id = :id';
 $statement = $db->prepare($query);
-$statement->bindValue(':id', $id);
-$statement->bindValue(':username', $username);
-$statement->bindValue(':password', $password);
 
+$statement->bindValue(':username', $username1);
+$statement->bindValue(':password', $passwordHash);
 $statement->bindValue(':admin', $admin);
-
+$statement->bindValue(':id', $id);
 $statement->execute();
 $statement->closeCursor();
 echo "<script type='text/javascript'>alert('$query');</script>";
 // Display the Product List page
-include('index.php');
+include('administration.php');
 }
 ?>

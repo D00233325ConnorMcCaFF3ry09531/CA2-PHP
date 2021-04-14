@@ -1,7 +1,19 @@
 
 <?php  
 
+session_start();
 
+/**
+ * Check if the user is logged in.
+ */
+if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
+    //User not logged in. Redirect them back to the login.php page.
+    header('Location: login.php');
+    exit;
+}
+$name = $_SESSION['user_id'];
+
+echo "<script type='text/javascript'>alert('$name');</script>";
 require_once('database.php');
 
 
@@ -22,21 +34,7 @@ $statement3->closeCursor();
 <?php
 include('includes/header.php');
 ?>
-<h1>Electronics List</h1>
 
-<aside>
-<!-- display a list of categories -->
-<h2>Categories</h2>
-<nav>
-<ul>
-
-
-
-</ul>
-</nav>          
-</aside>
-
-<section>
 <!-- display a table of electronics -->
 
 
