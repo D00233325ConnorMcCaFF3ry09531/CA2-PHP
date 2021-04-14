@@ -59,7 +59,7 @@ include('includes/header.php');
 <select name="admin" id="admin">
   <option value="">Select...</option>
   <option value="1">Male</option>
-  <option value="2">Female</option>
+  <option value="0">Female</option>
 </select>
             
             <label>&nbsp;</label>

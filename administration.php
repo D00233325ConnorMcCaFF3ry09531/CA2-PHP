@@ -6,14 +6,16 @@ session_start();
 /**
  * Check if the user is logged in.
  */
-if(!isset($_SESSION['user_id']) || !isset($_SESSION['logged_in'])){
+
+$a = $_SESSION['user_admin'];
+
+
+if(!isset($_SESSION['user_id']) || !isset($_SESSION['user_password']) || $a != 1 || !isset($_SESSION['logged_in'])){
     //User not logged in. Redirect them back to the login.php page.
     header('Location: login.php');
     exit;
 }
-$name = $_SESSION['user_id'];
 
-echo "<script type='text/javascript'>alert('$name');</script>";
 require_once('database.php');
 
 
