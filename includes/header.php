@@ -37,10 +37,12 @@
  
   <a href="contact.php">Contact Us</a>
   <a href="manage_products.php">Manage Product</a>
+  <a href="manage_regions.php">Manage Store</a>
+  <a href="administration.php">Administration</a>
   <a href="login.php">Login</a>
   <a href="register.php">Register</a>
   <a href="logout.php">Logout</a>
-  <a href="administration.php">Administration</a>
+
 
 
 

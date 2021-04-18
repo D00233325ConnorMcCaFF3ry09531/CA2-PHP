@@ -28,7 +28,7 @@ $query = 'SELECT *
 $statement = $db->prepare($query);
 $statement->bindValue(':id', $id);
 $statement->execute();
-$electronics = $statement->fetch(PDO::FETCH_ASSOC);
+$users = $statement->fetch(PDO::FETCH_ASSOC);
 $statement->closeCursor();
 ?>
 <!-- the head section -->
@@ -42,24 +42,23 @@ include('includes/header.php');
               id="edit_user_form">
          
             <input type="hidden" name="id"
-                   value="<?php echo $electronics['id']; ?>">
+                   value="<?php echo $users['id']; ?>">
 <br>
             <label>Username:</label>
             <input type="input" name="username"  required
-            value="<?php echo $electronics['username']; ?>">
+            value="<?php echo $users['username']; ?>">
             <br>
 
             <label>Password:</label>
             <input type="input" name="password" id="password" onBlur="validate_password();" required
-                   value="<?php echo $electronics['password']; ?>"><span id="password_err"></span>
+                   value="<?php echo $users['password']; ?>"><span id="password_err"></span>
             <br>
 
 <label>Admin:</label>
 
 <select name="admin" id="admin">
-  <option value="">Select...</option>
-  <option value="1">Male</option>
-  <option value="0">Female</option>
+  <option value="0">No</option>
+  <option value="1">Yes</option>
 </select>
             
             <label>&nbsp;</label>

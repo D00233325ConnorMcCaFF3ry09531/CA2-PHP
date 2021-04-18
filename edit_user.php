@@ -1,11 +1,43 @@
 <?php
+session_start();
+
+/**
+ * Check if the user is logged in.
+ */
+
+$a = $_SESSION['user_admin'];
+
+
+if(!isset($_SESSION['user_id']) || !isset($_SESSION['user_password']) || $a != 1 || !isset($_SESSION['logged_in'])){
+    //User not logged in. Redirect them back to the login.php page.
+    header('Location: login.php');
+    exit;
+}
+
+
 
 // Get the electronics data
 $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
 $username1 = filter_input(INPUT_POST, 'username');
 $password = filter_input(INPUT_POST, 'password');
-$passwordHash = password_hash($password, PASSWORD_BCRYPT, array("cost" => 12));
 $admin = filter_input(INPUT_POST, 'admin');
+
+
+
+
+if($_SESSION['user_password'] == $password){
+    echo '<script type="text/javascript">alert("Hello");</script>';
+    $passwordHash = $password;
+} else {
+    $passwordHash = password_hash($password, PASSWORD_BCRYPT, array("cost" => 12));
+}
+
+
+
+
+
+
+
 echo "<script type='text/javascript'>alert('$username1');</script>";
 echo "<script type='text/javascript'>alert('$admin');</script>";
 echo "<script type='text/javascript'>alert('$id');</script>";
@@ -38,6 +70,6 @@ $statement->execute();
 $statement->closeCursor();
 echo "<script type='text/javascript'>alert('$query');</script>";
 // Display the Product List page
-include('administration.php');
+include('logout.php');
 }
 ?>

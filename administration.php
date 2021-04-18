@@ -23,13 +23,13 @@ require_once('database.php');
 // Get name for current category
 
 
-// Get electronics for selected category
-$queryelectronics = "SELECT * FROM users
+// Get users for selected category
+$queryusers = "SELECT * FROM users
 ORDER BY id";
-$statement3 = $db->prepare($queryelectronics);
+$statement3 = $db->prepare($queryusers);
 
 $statement3->execute();
-$electronics = $statement3->fetchAll();
+$users = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
 <div class="container">
@@ -37,7 +37,7 @@ $statement3->closeCursor();
 include('includes/header.php');
 ?>
 
-<!-- display a table of electronics -->
+<!-- display a table of users -->
 
 
 <table>
@@ -48,17 +48,17 @@ include('includes/header.php');
 <th>Admin</th>
 <th>Edit</th>
 </tr>
-<?php foreach ($electronics as $electronics) : ?>
+<?php foreach ($users as $users) : ?>
 <tr>
 
-<td><?php echo $electronics['id']; ?></td>
-<td class="right"><?php echo $electronics['username']; ?></td>
-<td><?php echo $electronics['password']; ?></td>
-<td><?php echo $electronics['admin']; ?></td>
+<td><?php echo $users['id']; ?></td>
+<td class="right"><?php echo $users['username']; ?></td>
+<td><?php echo $users['password']; ?></td>
+<td><?php echo $users['admin']; ?></td>
 <td><form action="edit_user_form.php" method="post"
 id="edit_user_form">
 <input type="hidden" name="id"
-value="<?php echo $electronics['id']; ?>">
+value="<?php echo $users['id']; ?>">
 <input type="submit" value="Edit">
 </td>
 
