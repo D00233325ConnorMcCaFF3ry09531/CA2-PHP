@@ -17,8 +17,8 @@ include('includes/header.php');
 <input type="text" name="email" id="email" onBlur="email_validation();"> <br><span id="email_err"></span>
 </p>
 <p>
-<label for='phone'>Phone:</label><br>
-<input type="text" name="phone" id="phone" onBlur="phone_validation();"><br><span id="phone_err"></span>
+<label for='phone'>Phone: (9 digits) e.g (000000000)</label><br>
+<input type="text" name="phone" id="phone" onBlur="phone_validation();" placeholder="9 digit phonenumber .e.g. (000000000)" pattern="^[0-9]{9}$"><br><span id="phone_err"></span>
 </p>
 <label for='message'>Message:</label> <br>
 <textarea name="message"></textarea>
