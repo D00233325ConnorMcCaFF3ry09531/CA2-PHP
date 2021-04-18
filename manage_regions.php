@@ -9,6 +9,24 @@
  * Print out something that only logged in users can see.
  */
 
+session_start();
+$a = $_SESSION['user_admin'];
+
+
+if(!isset($_SESSION['user_id']) || !isset($_SESSION['user_password']) || $a != 1 || !isset($_SESSION['logged_in'])){
+    //User not logged in. Redirect them back to the login.php page.
+    header('Location: login.php');
+    exit;
+}
+
+
+/**
+ * Print out something that only logged in users can see.
+ */
+
+
+
+
 
 
 require_once('database.php');
@@ -82,9 +100,11 @@ include('includes/header.php');
 <th>Image</th>
 <th>Address</th>
 <th>Postcode</th>
+<th>Last Inspection Date </th>
+<th>Date and Time Added  </th>
 
-
-
+<th>Delete</th>
+<th>Edit</th>
 </tr>
 <?php foreach ($store as $store) : ?>
 <tr>
@@ -92,11 +112,32 @@ include('includes/header.php');
 <td><?php echo $store['address']; ?></td>
 
 <td><?php echo $store['postcode']; ?></td>
+<td><?php echo $store['inspection']; ?></td>
+<td><?php echo $store['created']; ?></td>
 
 
+<td><form action="delete_store.php" method="post"
+id="delete_store_form">
+<input type="hidden" name="store_id"
+value="<?php echo $store['storeID']; ?>">
+<input type="hidden" name="region_id"
+value="<?php echo $store['regionID']; ?>">
+<input type="submit" value="Delete">
+</form></td>
+<td><form action="edit_store_form.php" method="post"
+id="delete_store_form">
+<input type="hidden" name="store_id"
+value="<?php echo $store['storeID']; ?>">
+<input type="hidden" name="region_id"
+value="<?php echo $store['regionID']; ?>">
+<input type="submit" value="Edit">
+</form></td>
 </tr>
 <?php endforeach; ?>
 </table>
+<p><a class= "btn" href="add_store_form.php">Add Store</a></p>
+<p><a class= "btn" href="region_list.php">Manage Regions</a></p>
+<p><a class= "btn" href="index.php">Return to Products</a></p>
 
 
 
