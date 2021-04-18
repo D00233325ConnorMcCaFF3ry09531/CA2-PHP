@@ -117,7 +117,7 @@ include('includes/header.php');
             <label for="email">Email</label><br>
             <input type="text" id="email" name="email" onBlur=email_validation()><span id="email_err"></span><br>
             <label for="password">Password</label><br>
-            <input type="text" id="password" name="password" onBlur="validate_password();"><span id="password_err"></span><br>
+            <input type="password" id="password" name="password" onBlur="validate_password();"><span id="password_err"></span><br>
             <input type="submit" name="login" value="Login">
         </form>
         <?php
