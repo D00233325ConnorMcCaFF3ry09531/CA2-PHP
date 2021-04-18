@@ -142,7 +142,12 @@ function name_validation(){
                 document.getElementById('password_err').style.color = "#00AF33";
                 }
                 }
-            
+           
+           
+
+
+
+                
     
     //password validation ends
     //zip validation starts

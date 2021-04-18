@@ -45,6 +45,7 @@ include('includes/header.php');
 <th>Id</th>
 <th>Username</th>
 <th>Password</th>
+<th>Email</th>
 <th>Admin</th>
 <th>Edit</th>
 </tr>
@@ -54,6 +55,7 @@ include('includes/header.php');
 <td><?php echo $users['id']; ?></td>
 <td class="right"><?php echo $users['username']; ?></td>
 <td><?php echo $users['password']; ?></td>
+<td><?php echo $users['email']; ?></td>
 <td><?php echo $users['admin']; ?></td>
 <td><form action="edit_user_form.php" method="post"
 id="edit_user_form">

@@ -1,4 +1,7 @@
 <?php
+
+
+
 session_start();
 
 /**
@@ -21,7 +24,7 @@ $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
 $username1 = filter_input(INPUT_POST, 'username');
 $password = filter_input(INPUT_POST, 'password');
 $admin = filter_input(INPUT_POST, 'admin');
-
+$email = filter_input(INPUT_POST, 'email');
 
 
 
@@ -34,16 +37,8 @@ if($_SESSION['user_password'] == $password){
 
 
 
-
-
-
-
-echo "<script type='text/javascript'>alert('$username1');</script>";
-echo "<script type='text/javascript'>alert('$admin');</script>";
-echo "<script type='text/javascript'>alert('$id');</script>";
-echo "<script type='text/javascript'>alert('$password');</script>";
 // Validate inputs
-if ($id == NULL ||$username1 == NULL || $password= null 
+if ($id == NULL ||$username1 == NULL || $password= null || $email == NULL 
 ) {
 $error = "Invalid  data. Check all fields and try again.";
 include('error.php');
@@ -57,6 +52,7 @@ require_once('database.php');
 $query = 'UPDATE users
 SET username = :username,
 password = :password,
+email = :email,
 admin = :admin
 
 WHERE id = :id';
@@ -64,12 +60,15 @@ $statement = $db->prepare($query);
 
 $statement->bindValue(':username', $username1);
 $statement->bindValue(':password', $passwordHash);
+$statement->bindValue(':email', $email);
 $statement->bindValue(':admin', $admin);
 $statement->bindValue(':id', $id);
 $statement->execute();
 $statement->closeCursor();
 echo "<script type='text/javascript'>alert('$query');</script>";
 // Display the Product List page
-include('logout.php');
+
 }
+
+include('index.php')
 ?>

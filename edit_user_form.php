@@ -53,6 +53,12 @@ include('includes/header.php');
             <input type="input" name="password" id="password" onBlur="validate_password();" required
                    value="<?php echo $users['password']; ?>"><span id="password_err"></span>
             <br>
+            
+            <label>Email:</label>
+            <input type="input" name="email" id="email" onBlur="email_validation();" required
+                   value="<?php echo $users['email']; ?>"><span id="email_err"></span>
+            <br>
+
 
 <label>Admin:</label>
 

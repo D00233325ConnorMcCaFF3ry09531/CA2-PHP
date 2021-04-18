@@ -81,19 +81,24 @@ br {
 }
 #add_electronics_form {
     margin: .5em 0 1em;
+
+
+    label {
+        width: 6em;
+        padding-right: 1em;
+        padding-bottom: .5em;
+        float: left;
 }
-#add_electronics_form label {
-    width: 6em;
-    padding-right: 1em;
-    padding-bottom: .5em;
+
+input {
     float: left;
 }
-#add_electronics_form input {
-    float: left;
-}
-#add_electronics_form input[text] {
+input[text] {
     width: 15em;
 }
+}
+
+
 
 @mixin button($padding:10px 10px, $font-size:16px, $border-radius:12px, $bg-color:#ccc, $font-color:$seconday_colour) {
 	padding:$padding;

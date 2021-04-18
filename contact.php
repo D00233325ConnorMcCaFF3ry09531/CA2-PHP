@@ -14,16 +14,16 @@ include('includes/header.php');
 </p>
 <p>
 <label for='email'>Email Address:</label> <br>
-<input type="text" name="email"> <br>
+<input type="text" name="email" id="email" onBlur="email_validation();"> <br><span id="email_err"></span>
 </p>
 <p>
+<label for='phone'>Phone:</label><br>
+<input type="text" name="phone" id="phone" onBlur="phone_validation();"><br><span id="phone_err"></span>
+</p>
 <label for='message'>Message:</label> <br>
 <textarea name="message"></textarea>
 </p>
-<p>
-<label for="phone">Phone:</label> <br>
-<input type="text" name="phone"> <br>
-</p>
+
 
 <input type="submit" value="Submit"><br>
 </form>  

@@ -39,7 +39,6 @@ h1, h2 {
   overflow: hidden;
 }
 
-/* Dropdown button */
 .dropdown .dropbtn {
   font-size: 16px;
   border: none;
@@ -53,6 +52,7 @@ h1, h2 {
   /* Important for vertical align on mobile phones */
 }
 
+/* Dropdown button */
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
   color: #1167e7;
@@ -70,7 +70,6 @@ h1, h2 {
   z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
   float: none;
   color: black;
@@ -80,6 +79,7 @@ h1, h2 {
   text-align: left;
 }
 
+/* Links inside the dropdown */
 /* Add a grey background color to dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #ddd;
