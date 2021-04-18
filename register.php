@@ -25,7 +25,7 @@ if(isset($_POST['register'])){
     //Retrieve the field values from our registration form.
     $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
     $pass = !empty($_POST['password']) ? trim($_POST['password']) : null;
-    
+    $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
     //TO ADD: Error checking (username characters, password length, etc).
     //Basically, you will need to add your own error checking BEFORE
     //the prepared statement is built and executed.
@@ -58,13 +58,14 @@ if(isset($_POST['register'])){
     
     //Prepare our INSERT statement.
     //Remember: We are inserting a new row into our users table.
-    $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+    $sql = "INSERT INTO users (username, password, email) VALUES (:username, :password, :email)";
     $stmt = $pdo->prepare($sql);
     
     //Bind our variables.
     $stmt->bindValue(':username', $username);
     $stmt->bindValue(':password', $passwordHash);
-
+    $stmt->bindValue(':email', $email);
+    
     //Execute the statement and insert the new account.
     $result = $stmt->execute();
     
@@ -88,9 +89,12 @@ include('includes/header.php');
     
         <h1>Register</h1>
         <form action="register.php" method="post">
-            <label for="username">Username</label>
+            <label for="username">Username</label><br>
             <input type="text" id="username" name="username"><br>
-            <label for="password"  >Password</label>
+            
+            <label for= "email">Email  </label><br>
+            <input type="text" id="email" name="email" onBlur=email_validation()><span id="email_err"></span><br>
+            <label for="password" >Password</label><br>
             <input type="password" id="password" name="password" onBlur="validate_password();"><span id="password_err"></span><br>
             <input type="submit" name="register" value="Register"></button>
         </form>

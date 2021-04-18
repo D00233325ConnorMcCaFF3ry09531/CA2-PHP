@@ -1,6 +1,19 @@
 <?php
 require_once('database.php');
+session_start();
 
+/**
+ * Check if the user is logged in.
+ */
+
+$a = $_SESSION['user_admin'];
+
+
+if(!isset($_SESSION['user_id']) || !isset($_SESSION['user_password']) || $a != 1 || !isset($_SESSION['logged_in'])){
+    //User not logged in. Redirect them back to the login.php page.
+    header('Location: login.php');
+    exit;
+}
 // Get IDs
 $store_id = filter_input(INPUT_POST, 'store_id', FILTER_VALIDATE_INT);
 $region_id = filter_input(INPUT_POST, 'region_id', FILTER_VALIDATE_INT);

@@ -73,7 +73,7 @@ function name_validation(){
     }
     else
     {
-    document.getElementById('email_err').innerHTML = 'email selected.';
+    document.getElementById('email_err').innerHTML = 'email is valid.';
     document.getElementById('email_err').style.color = "#00AF33";
     }
     }
