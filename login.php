@@ -1,3 +1,10 @@
+<script type="text/javascript">
+function jsFunction(){
+    alert("Invalid Login Details");
+
+}
+</script>
+
 <?php
 
 //login.php
@@ -29,9 +36,9 @@ if(isset($_POST['login'])){
     //Retrieve the field values from our login form.
     $username = !empty($_POST['username']) ? trim($_POST['username']) : null;
     $passwordAttempt = !empty($_POST['password']) ? trim($_POST['password']) : null;
-    
+    $email = !empty($_POST['email']) ? trim($_POST['email']) : null;
     //Retrieve the user account information for the given username.
-    $sql = "SELECT id, username, password,admin FROM users WHERE username = :username";
+    $sql = "SELECT id, username, password,email,admin FROM users WHERE username = :username";
     $stmt = $pdo->prepare($sql);
     
     //Bind value.
@@ -54,9 +61,19 @@ if(isset($_POST['login'])){
         
         //Compare the passwords.
         $validPassword = password_verify($passwordAttempt, $user['password']);
-        
+        $validEmail = false;
+
+if( $email == $user['email']){
+
+$validEmail = true;
+
+}
+
+
+
+
         //If $validPassword is TRUE, the login has been successful.
-        if($validPassword){
+        if($validPassword && $validEmail){
             
             //Provide the user with a login session.
             $_SESSION['user_id'] = $user['id'];
@@ -75,8 +92,9 @@ if(isset($_POST['login'])){
             exit;
             
         } else{
+            
             //$validPassword was FALSE. Passwords do not match.
-            die('Incorrect username / password combination!');
+            echo '<script type="text/javascript">jsFunction();</script>';
         }
     }
     
@@ -89,13 +107,16 @@ if(isset($_POST['login'])){
 <?php
 include('includes/header.php');
 ?>
+<div id="invalidLogin_err"></span>
         <title>Login</title>
-    
+        <span id="login_err"></span>
         <h1>Login</h1>
         <form action="login.php" method="post">
-            <label for="username">Username</label>
+            <label for="username">Username</label><br>
             <input type="text" id="username" name="username"><br>
-            <label for="password">Password</label>
+            <label for="email">Email</label><br>
+            <input type="text" id="email" name="email" onBlur=email_validation()><span id="email_err"></span><br>
+            <label for="password">Password</label><br>
             <input type="text" id="password" name="password" onBlur="validate_password();"><span id="password_err"></span><br>
             <input type="submit" name="login" value="Login">
         </form>
